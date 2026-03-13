@@ -3,6 +3,6 @@ pandas
 numpy
 matplotlib
 seaborn
-google-generativeai
 python-dotenv
+google-generativeai
 groq
