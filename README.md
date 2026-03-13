@@ -9,6 +9,8 @@ This project demonstrates how Large Language Models (LLMs) can be integrated wit
 
 ---
 
+App Link : https://autonomous-ai-data-analyst-ep9gqcryezicdm5nrjmiow.streamlit.app/
+
 ## Features
 
 * Upload CSV datasets
