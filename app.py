@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 
+from agents.report_agent import generate_report #changes 
 from agents.data_profiler import profile_data
 from agents.data_cleaning_agent import clean_data
 from agents.eda_agent import run_eda
@@ -53,3 +54,17 @@ if uploaded_file:
         answer = answer_question(clean_df, question)
 
         st.write(answer)
+
+st.subheader("Generate AI Data Report")
+
+if st.button("Generate PDF Report"):
+
+    report_path = generate_report(df)
+
+    with open(report_path, "rb") as file:
+        st.download_button(
+            label="Download Report",
+            data=file,
+            file_name="data_analysis_report.pdf",
+            mime="application/pdf"
+        )
