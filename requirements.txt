@@ -6,3 +6,4 @@ seaborn
 python-dotenv
 google-generativeai
 groq
+fpdf
