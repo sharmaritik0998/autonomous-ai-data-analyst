@@ -1,7 +1,6 @@
 import streamlit as st
 
 def profile_data(df):
-
     st.write("Dataset Shape")
     st.write(df.shape)
 

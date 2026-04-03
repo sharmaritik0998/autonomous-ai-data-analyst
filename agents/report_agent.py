@@ -2,8 +2,7 @@ from fpdf import FPDF
 from utils.llm_client import generate_text
 
 def generate_report(df):
-
-    summary = df.describe().to_string()
+    summary = df.describe(include='all').to_string()
 
     prompt = f"""
     You are a professional data analyst.
@@ -13,7 +12,7 @@ def generate_report(df):
     Dataset summary:
     {summary}
 
-    Write a short data analysis report including:
+    Write a short report including:
     - dataset overview
     - key insights
     - recommendations
@@ -23,14 +22,12 @@ def generate_report(df):
 
     pdf = FPDF()
     pdf.add_page()
-
     pdf.set_font("Arial", size=12)
 
     for line in insights.split("\n"):
         pdf.multi_cell(0, 8, line)
 
     file_name = "data_analysis_report.pdf"
-
     pdf.output(file_name)
 
     return file_name
